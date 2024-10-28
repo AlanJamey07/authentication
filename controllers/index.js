@@ -23,7 +23,7 @@ const login  = async(req,res,next) =>{
     if(!match){
        return res.json("password is Wrong");
     }
-    const token =  jwt.sign({username} , process.env.SECRET , {expiresIn : "100000"});
+    const token =  jwt.sign({username} , process.env.SECRET );
     res.json(token);
 }
 
